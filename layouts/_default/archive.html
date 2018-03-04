@@ -1,7 +1,7 @@
-{{ define "title" }}{{ .Section | upper }} - {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ T "archive" }} - {{ .Site.Title }}{{ end }}
 
 {{ define "content" }}
-{{- $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" .Section) .Site.Params.archivePaginate }}
+{{- $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "in" .Site.Params.mainSections) .Site.Params.archivePaginate }}
 <section id="archive" class="archive">
   {{- if not $paginator.HasPrev }}
     <div class="archive-title">
