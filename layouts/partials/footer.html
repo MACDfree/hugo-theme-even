@@ -48,5 +48,11 @@
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">{{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}</span>
+    {{ if .Site.Params.buildStatus -}}
+    <span class="division">|</span>
+    <span style="margin-left: 5px;">
+      <img alt="buildstatus" src="{{- .Site.Params.buildStatus -}}">
+    </span>
+    {{- end }}
   </span>
 </div>
