@@ -4,7 +4,7 @@ date: {{ .Date }}
 lastmod: {{ .Date }}
 draft: true
 keywords: []
-description: ""
+description: "{{ replace .TranslationBaseName "-" " " | title }}"
 tags: []
 categories: []
 author: ""
