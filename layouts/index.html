@@ -1,6 +1,6 @@
 {{ define "content" }}
   <section id="posts" class="posts">
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.mainSections) }}
+    {{ $paginator := .Paginate (where (where .Data.Pages "Type" "in" .Site.Params.mainSections) ".Params.hiddenfromhomepage" "!=" true) }}
     {{ range $paginator.Pages }}
       {{ .Render "summary" }}
     {{ end }}
