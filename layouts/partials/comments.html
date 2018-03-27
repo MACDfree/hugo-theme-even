@@ -1,4 +1,4 @@
-{{ if and .IsPage (ne .Params.comment false) }}
+{{ if and .IsPage (eq .Params.comment true) }}
   <!-- Disqus -->
   {{- if .Site.DisqusShortname -}}
     <div id="disqus_thread"></div>
